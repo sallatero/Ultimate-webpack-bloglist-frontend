@@ -5,8 +5,8 @@ const config = (env, argv) => {
   console.log('argv: ', argv.mode)
 
   const backend_url = argv.mode === 'production'
-  ? 'http://localhost:3003'
-  : 'http://localhost:3003'
+    ? 'https://pure-falls-85818.herokuapp.com'
+    : 'http://localhost:3003'
 
   return {
     entry: ['@babel/polyfill', './index.js'],
@@ -19,7 +19,7 @@ const config = (env, argv) => {
       compress: true,
       port: 3000
     },
-    devtool: "source-map",
+    devtool: 'source-map',
     module: {
       rules: [
         {
