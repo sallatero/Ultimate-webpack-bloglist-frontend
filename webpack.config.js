@@ -36,11 +36,6 @@ const config = (env, argv) => {
         }
       ]
     },
-    resolveLoader: {
-      alias: {
-        'data-cy-loader': path.resolve(__dirname, 'data-cy-loader.js')
-      }
-    },
     plugins: [
       new webpack.DefinePlugin({
         BACKEND_URL: JSON.stringify(backend_url)
