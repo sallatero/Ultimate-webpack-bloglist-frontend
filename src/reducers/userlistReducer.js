@@ -36,6 +36,30 @@ const userlistReducer = (state = [], action) => {
   case 'INIT_USERS': {
     return action.data
   }
+  case 'NEW_BLOG': {
+    let newBlog = { ...action.data }
+    console.log('USER LIST REDUCER: ', newBlog)
+    const newState = state.map(u => {
+      if (u.id === newBlog.user.id) {
+        //delete newBlog.user
+        const newBlogsArr = u.blogs.concat(newBlog)
+        return { ...u, blogs: newBlogsArr }
+      }
+      return u
+    })
+    return newState
+  }
+  case 'DELETE_BLOG': {
+    let deletableBlog = { ...action.data }
+    const newState = state.map(u => {
+      if (u.id === deletableBlog.user.id) {
+        const newBlogsArr = u.blogs.filter(b => b.id !== deletableBlog.id)
+        return { ...u, blogs: newBlogsArr }
+      }
+      return u
+    })
+    return newState
+  }
   default:
     return state
   }

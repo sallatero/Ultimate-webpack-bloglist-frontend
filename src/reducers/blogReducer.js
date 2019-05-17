@@ -40,7 +40,7 @@ export const deleteBlog = (blog, token) => {
       dispatch(setMessage(`Blog ${blog.title} deleted`, 5000))
       dispatch({
         type: 'DELETE_BLOG',
-        data: { id: blog.id }
+        data: { ...blog }
       })
     }catch (exception) {
       console.log('EXCEPTION: poistaminen ei onnistunut, ', exception)
@@ -110,8 +110,9 @@ const blogReducer = (state = [], action) => {
     return action.data
   }
   case 'NEW_BLOG' : {
-    const newState = state.concat(action.data)
-    return newState
+    console.log('BLOG REDUCER: ', action.data)
+    const newBlog = { ...action.data }
+    return state.concat(newBlog)
   }
   case 'LIKE_BLOG' : {
     const newState = state.map(b => b.id === action.data.id ? action.data : b)
@@ -122,6 +123,7 @@ const blogReducer = (state = [], action) => {
     return newState
   }
   case 'DELETE_BLOG' : {
+    console.log('BLOG REDUCER Delete: ', action.data)
     const newState = state.filter(b => b.id !== action.data.id)
     return newState
   }
