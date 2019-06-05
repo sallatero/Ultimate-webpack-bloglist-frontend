@@ -1,7 +1,3 @@
-/* STATE for notification:
-content: message to be shown
-*/
-
 export const setMessage = (content, seconds) => {
   console.log('setMessage: ', content)
   return dispatch => {

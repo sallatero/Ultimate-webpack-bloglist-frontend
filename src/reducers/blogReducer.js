@@ -1,10 +1,6 @@
 import blogService from '../services/blogs'
 import { setMessage } from '../reducers/notificationReducer'
 
-/* STATE for blogs:
-data: array of blogs
-*/
-
 export const initializeBlogs = () => {
   return async dispatch => {
     const blogs = await blogService.getAll()
@@ -69,7 +65,6 @@ export const likeBlog = (blog, token) => {
         type: 'LIKE_BLOG',
         data: modifiedBlog
       })
-      //setBlogs(blogs.map(b => b.id !== id ? b : newVersion))
     }catch (exception) {
       console.log('EXCEPTION: likettäminen ei onnistunut, ', exception)
     }
@@ -95,7 +90,6 @@ export const commentBlog = (id, commentObj, token) => {
         type: 'COMMENT_BLOG',
         data: modifiedBlog
       })
-      //setBlogs(blogs.map(b => b.id !== id ? b : newVersion))
     }catch (exception) {
       console.log('EXCEPTION: kommentointi ei onnistunut, ', exception)
     }

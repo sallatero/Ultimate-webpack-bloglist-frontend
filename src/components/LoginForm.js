@@ -1,5 +1,4 @@
 import React from 'react'
-import Togglable from '../components/Togglable'
 import { useField } from '../hooks'
 import { setMessage } from '../reducers/notificationReducer'
 import { loginUser } from '../reducers/loggedUserReducer'
@@ -21,12 +20,9 @@ export const LoginForm = (props) => {
       console.log('HISTORY PUSH')
     } catch(exception) {
       console.log('exception: ', exception)
-      props.setMessage('kirjautuminen epäonnistui')
+      props.setMessage('Login unsuccessful')
     }
   }
-
-  //Ref loginformiin
-  const loginFormRef = React.createRef()
 
   return (
     <Container text>

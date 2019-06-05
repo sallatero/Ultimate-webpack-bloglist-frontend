@@ -97,23 +97,7 @@ const BlogPage = (props) => {
     </Container>
   )
 }
-/*
-<Button size='mini' floated='right' onClick={() => addLike(props.blog)}>like</Button>
-<Button size='mini' floated='right' onClick={() => deleteBlog(props.blog)}>delete</Button>
-<Button size='mini' floated='right' disabled>delete</Button>
 
-const blogDetails = () => {
-  return (
-
-  )
-}
-
-const blogComments = () => {
-  return (
-
-  )
-}
-*/
 const mapStateToProps = (state) => {
   //console.log(state)
   return {
