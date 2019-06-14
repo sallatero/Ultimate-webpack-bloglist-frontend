@@ -1,4 +1,6 @@
 ## Blog listing app - frontend
+<a href="https://github.com/sallatero/Ultimate-webpack-bloglist-backend">Check here the code for the backend of this app</a>
+<br/>
 <p>This repository holds the frontend to a blog listing app, where users can add blogs they like, comment and like them. All users can see all blogs and comment and like each other's blogs.
 Deleting a blog is only available for the user who added it in the first place.</p>
 
